@@ -1,3 +1,5 @@
+// My code is on the bottom
+
 interface Artist {
     name: string;
     category: 'artist';
@@ -46,3 +48,38 @@ let albums: Album[] = [
         category: 'album'
     }
 ];
+
+
+// Task 1
+// Write an extractName function that expects to be passed an object that has a name property 
+// and returns the value of that name property.
+
+function extractName(person: { name: string }): string {
+    return person.name;
+}
+
+// console.group('extractName:');
+// console.log(extractName(artists[0]));
+// console.log(extractName(albums[0]));
+// console.groupEnd();
+
+// Task 2
+// Write a getAlbumsByArtistName function that expects to receive a string as an argument and returns 
+// an array of objects of the Album type whose artistName property matches the argument.
+
+function getAlbumsByArtistName(name: string): Array<Album> {
+    let result = [];
+    // console.log('name: ', name);
+    for (let i = 0; i < albums.length; i++) {
+        // console.log("albums: ", albums[i]);
+        if (name === albums[i].artistName) {
+            // console.log("albums[i].name: ", albums[i].artistName);
+            result.push(albums[i]);
+        }
+    }
+    return result;
+}
+
+console.group('getAlbumsByArtistName:');
+console.log(getAlbumsByArtistName('Led Zeppelin'));
+console.groupEnd();
