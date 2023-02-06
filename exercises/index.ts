@@ -96,7 +96,6 @@ function getArtistAndAlbumsByArtistName(name: string): Array<Album | Artist> {
     let result: Array<Album | Artist> = [];
     for (let i = 0; i < artists.length; i++) {
         if (name === artists[i].name) {
-            // console.log("albums[i].name: ", albums[i].artistName);
             result.push(artists[i]);
             result.push(...getAlbumsByArtistName(name));
             break;
@@ -105,6 +104,24 @@ function getArtistAndAlbumsByArtistName(name: string): Array<Album | Artist> {
     return result;
 }
 
-console.group("getArtistAndAlbumsByArtistName:");
-console.log(getArtistAndAlbumsByArtistName("Madonna"));
+// console.group("getArtistAndAlbumsByArtistName:");
+// console.log(getArtistAndAlbumsByArtistName("Madonna"));
+// console.groupEnd();
+
+// Task 4
+/*
+    Write a getArtistWithAlbumNames function that expects to receive an array that contains a single object of the Artist type 
+    and any number of objects of the Album type (the idea is that the caller would obtain this array by calling 
+    the getArtistAndAlbumsByArtistName function). The getArtistWithAlbumNames function should return an object of 
+    a new type that has all the same properties as objects of the Artist type but with the addition of an albumNames property, 
+    whose value is an array of strings. The strings in the albumNames array should be extracted from the objects of 
+    the Album type in the array that was passed to getArtistWithAlbumNames.
+*/
+
+function getArtistWithAlbumNames(data: Array<Artist>): Array<Album | Artist> {
+
+}
+
+console.group('getArtistWithAlbumNames:');
+console.log(getArtistWithAlbumNames(getArtistAndAlbumsByArtistName('Madonna')));
 console.groupEnd();
