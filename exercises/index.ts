@@ -118,10 +118,10 @@ function getArtistAndAlbumsByArtistName(name: string): Array<Album | Artist> {
     the Album type in the array that was passed to getArtistWithAlbumNames.
 */
 
-function getArtistWithAlbumNames(data: Array<Artist>): Array<Album | Artist> {
+// function getArtistWithAlbumNames(data: Array<Artist>): Array<Album | Artist> {
 
-}
+// }
 
-console.group('getArtistWithAlbumNames:');
-console.log(getArtistWithAlbumNames(getArtistAndAlbumsByArtistName('Madonna')));
-console.groupEnd();
+// console.group('getArtistWithAlbumNames:');
+// console.log(getArtistWithAlbumNames(getArtistAndAlbumsByArtistName('Madonna')));
+// console.groupEnd();
