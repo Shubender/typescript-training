@@ -133,6 +133,28 @@ function getArtistWithAlbumNames(
     };
 }
 
-console.group('getArtistWithAlbumNames:');
-console.log(getArtistWithAlbumNames(getArtistAndAlbumsByArtistName('Madonna')));
-console.groupEnd();
+// console.group('getArtistWithAlbumNames:');
+// console.log(getArtistWithAlbumNames(getArtistAndAlbumsByArtistName('Madonna')));
+// console.groupEnd();
+
+
+// Bonus Exercise
+// Write an extractNames function that expects to receive two arguments of the same type and returns an array containing 
+// two strings. The arguments the function receives should be of a single type that has a name property (thus objects of 
+// both the Artist and Album types could be passed to it but so could objects of any other type that has a name property 
+// whose value is a string). The array that is returned should contain the values of the name properties belonging to the 
+// two arguments.
+
+
+function extractNames<T extends { name: string }>(arg1: T, arg2: T): string[] {
+    return [arg1.name, arg2.name];
+}
+
+// console.group('extractNames:');
+// console.log(
+//     extractNames(
+//         getAlbumsByArtistName("Madonna"),
+//         getArtistAndAlbumsByArtistName("Madonna")
+//     )
+// );
+// console.groupEnd();
